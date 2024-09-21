@@ -139,11 +139,11 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'mouadaitha@gmail.com'
-EMAIL_HOST_PASSWORD = "vidpsxrrdbhsnizp"
+EMAIL_HOST_USER = 'ayoub.elmarchoum@gmail.com'
+EMAIL_HOST_PASSWORD = "ffghfh"
 
-DEFAULT_FROM_EMAIL = 'mouadaitha@gmail.com'
-SERVER_EMAIL = 'mouadaitha@gmail.com'
+DEFAULT_FROM_EMAIL = 'ayoub.elmarchoum@gmail.com'
+SERVER_EMAIL = 'ayoub.elmarchoum@gmail.com'
 
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
