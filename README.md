@@ -6,7 +6,6 @@ Ce projet utilise des techniques de web scraping pour extraire des données de p
   - Scrapy
   - BeautifulSoup
   - Selenium
-  - 
 #**Prérequis:**
 Avant de commencer, assurez-vous d'avoir installé les éléments suivants :
   - Python 3.x
