@@ -1,0 +1,53 @@
+{% extends 'home_page.html' %}
+{% load static %}
+{% block content %}
+
+<nav class="sidebar" onmouseover="openSidebar()" onmouseout="closeSidebar()">
+    <div class="sidebar-inner">
+        <header class="sidebar-header">
+            <button type="button" class="sidebar-burger" onclick="toggleSidebar()">
+                <ion-icon name="menu"></ion-icon>
+            </button>
+            <img class="sidebar-logo" src="{% static 'assets/logo-no-background.png' %}" alt="">
+        </header>
+        <nav class="sidebar-menu">
+            <button type="button">
+                <ion-icon name="home"></ion-icon>
+                <span><a href="{% url 'home_page' %}">Home</a></span>
+            </button>
+            <button type="button">
+                <ion-icon name="person"></ion-icon>
+                {% if user.is_superuser or user.is_staff %}
+                <span><a href="{% url 'dash' %}">{{user.username}}|admin</span></a>
+                {% else %}
+                <span><a href="{% url 'update_profile' %}">{{user.username}}|account</span></a>
+                {% endif %}
+            </button>
+            <button type="button">
+                <ion-icon name="albums"></ion-icon>
+                <span><a class="features_link" href="">features</a></span>
+            </button>
+            <button type="button">
+                <ion-icon name="people"></ion-icon>
+                <span><a href="{% url 'scrape' %}">Services</a></span>
+            </button>
+            <button type="button">
+                <i class="fa-solid fa-envelope" title="Contact"></i>
+                <span><a href="">Contact</a></span>
+            </button>
+            <button type="button">
+                <ion-icon name="log-out"></ion-icon>
+                <span><a href="{% url 'logout' %}">log out</a></span>
+            </button>
+            <button type="button">
+                <ion-icon name="logo-github"></ion-icon>
+                <span><a href="">Check our github</a></span>
+            </button>
+            <button type="button">
+                <ion-icon name="logo-linkedin"></ion-icon>
+                <span><a href="">Linked in</a></span>
+            </button>
+        </nav>
+    </div>
+</nav>
+{% endblock content %}

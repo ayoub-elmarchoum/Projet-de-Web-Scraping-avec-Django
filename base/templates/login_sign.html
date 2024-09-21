@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrapspot</title>    
+</head>
+<body>
+    {% if page == 'login' %}
+<section>
+    <div class="container">
+        <div class="flex flex-wrap items-center min-h-screen w-full py-30 lg:py-50 justify-center">
+            <div class="max-w-380 md:px-10 text-center">
+            <div class="max-w-380 md:px-10 w-full">
+            <a href="{% url 'home_page' %}"><img class="logo-img" width="300px" src="{% static 'assets/logo-no-background.png' %}" alt="Scrapspot"></a>
+            </div>
+            <div id="header" class="text-gray-1100 text-center text-14 md:text-16 mb-8">
+            <h1 class="text-24 md:text-30 text-black-100 mb-2">Log in to your account</h1>
+            <p>Welcome back! Please enter your details.</p>
+            </div>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div id="in-user" class="mb-6">
+                    <input id="user" >
+                </div>
+                <div id="in-user" class="mb-6">
+                    <input id="user" >
+                </div>
+                <div id="password" class="mb-6">
+                <input id="pass" >
+                </div>
+                <div class="mb-8">
+                    <input id="validate" type="submit">
+                </div>
+                {% comment %} {% if messages %}
+                <ul style="font-size: 15px;text-align: center;display: inline-block;" class="">
+                    {% for message in messages %}
+                    {% if message.tags == 'success' %}
+                    <li class="alert alert-success">{{ message }}</li>
+                    {% elif message.tags == 'warning' %}
+                    <li class="alert alert-warning">{{ message }}</li>
+                    {% elif message.tags == 'error' %}
+                    <li class="alert alert-danger">{{ message }}</li>
+                                    {% else %}
+                                    <li class=" alert alert-info">{{ message }}</li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+                {% endif %} {% endcomment %}
+                <span id="or_choice" class="block text-14 leading-none text-center text-gray-1100 uppercase relative mb-10 text-center">
+                    <span id="or" class="inline-block relative bg-gray-100 z-1 px-1">Or</span>
+                    <span id="back" class="absolute top-1/2 left-0 right-0 h-1 bg-gray-100 transform -translate-y-1/2 "></span>
+                </span>
+                    <ul class="mb-5">
+                        <li class="mb-6">
+                            <a id="google_login"
+                                class="block w-full border border-solid border-gray-1200 rounded-8 placeholder-gray-1100 text-16 px-6 py-1 text-center"
+                                href="#">
+                                <img width="200px" class="m-auto" src="{% static 'assets/google_sign_in.png' %}" alt="">
+                            </a>
+                        </li>
+                        <li class="mb-6">
+                            <a id="github_login" href="#"
+                                class="block w-full border border-solid border-gray-1200 rounded-8 placeholder-gray-1100 text-16 px-6 py-1 text-center">
+                                <img width="200px" class="m-auto" src="{% static 'assets/github_signin.png' %}" alt="">
+                            </a>
+                        </li>
+                    </ul>
+                    <span id="sign_up" class="block text-center text-gray-1100 text-14">Don't have an account? <a href="{% url '####'%}"
+                            class="text-black-100 hover:underline">Sign up</a></span>
+                    <span id="login" class="block text-center text-gray-1100 text-14">Forgot your password? <a href="{% url '####' %}"
+                            class="text-black-100 hover:underline">Click here</a></span>
+                </span>
+            </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% else %}
+<section class="registration">
+        <div class="flex flex-wrap">
+            <div id="register" class="w-full md:w">
+                <div class="flex flex-wrap items-center min-h-screen py-30 lg:py-50 ">
+                    <div class="max-w-380 md:px-10 w-full">
+                        <div class="">
+                            <a href="{% url 'home_page' %}"><img class="logo-img" width="250px"
+                                    src="{% static 'assets/logo-no-background.png' %}" alt="Scrapspot"></a>
+                        </div>
+                        <div id="header" class="text-gray-1100 text-center text-14 md:text-16 mb-8">
+                            <h3 class="text-24 md:text-30 text-black-100 mb-2">Join Us!</h3>
+                            <p>Get Started with Scrapspot for free :)
+                            <p>
+                        </div>
+                                    {% if messages %}
+                                    <ul style="font-size: 15px;text-align: center;display: inline-block;" class="">
+                                        {% for message in messages %}
+                                        {% if message.tags == 'success' %}
+                                        <li class="alert alert-success">{{ message }}</li>
+                                        {% elif message.tags == 'warning' %}
+                                        <li class="alert alert-warning">{{ message }}</li>
+                                        {% elif message.tags == 'error' %}
+                                        <li class="alert alert-danger">{{ message }}</li>
+                                        {% else %}
+                                        <li class=" alert alert-info"><span   id="generated-password" style="cursor: pointer;">{{ #### }}</span></li>
+                                        {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                    {% endif %}
+                        <form id="signup" action="{% url '####' %}" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div id="in-user" class="mb-6">
+                                <input id="user"
+                                    class="text-gray-10 block h-15 w-full border border-solid border-gray-1200 rounded-8 placeholder-gray-1100 text-16 px-10 py-4 focus:border-black-100 transition "
+                                    type="text" name="username" placeholder="Enter your Username">
+                            </div>
+                            <div id="in-user" class="mb-6">
+                                <input id="user"
+                                    class=""
+                                    type="email" name="email" placeholder="Enter your Email">
+                            </div>
+                            <div id="password" class="mb-6">
+                                <input id="pass"
+                                    class=""
+                                    type="password" value="" name="password" placeholder="******">
+                            </div>
+                            <div id="password" class="mb-6">
+                                <input id="pass"
+                                    class=" "
+                                    type="password" value="" name="confirm_password" placeholder="confirm password">
+                            </div>
+                            <div class="mb-6">
+                            <div class="relative">
+                                <input type="file" id="user_photo" name="user_photo" class="hidden">
+                                <label for="user_photo" class="bg-gray-200 py-2 px-4 rounded-lg font-medium text-gray-800 hover:bg-gray-300 focus-within:outline-none">
+                                <span>Select photo <i class="fa-solid fa-image-portrait"></i></span>
+                                </label>
+                            </div>
+                            </div>
+                            <div class="mb-8">
+                                <input id="validate" type="submit"
+                                    class="btn w-full block btn-sm cursor-pointer font-medium" value="Continue">
+                            </div>
+                            <span id="or_choice"
+                                class="block text-14 leading-none text-center text-gray-1100 uppercase relative mb-10 text-center">
+                                <span id="or" class="inline-block relative bg-gray-100 z-1 px-1">Or</span>
+                                <span id="back"
+                                    class="absolute top-1/2 left-0 right-0 h-1 bg-gray-100 transform -translate-y-1/2 "></span>
+                            </span>
+                            <ul class="mb-5">
+                                <li class="mb-6">
+                                    <a id="google_login"
+                                        class="block w-full border border-solid border-gray-1200 rounded-8 placeholder-gray-1100 text-16 px-6 py-1 text-center"
+                                        href="#">
+                                        <img width="200px" class="m-auto" src="{% static 'assets/google_sign_in.png' %}"
+                                            alt="">
+                                    </a>
+                                </li>
+                                <li class="mb-6">
+                                    <a id="github_login" href="#"
+                                        class="block w-full border border-solid border-gray-1200 rounded-8 placeholder-gray-1100 text-16 px-6 py-1 text-center">
+                                        <img width="200px" class="m-auto" src="{% static 'assets/github_signin.png' %}"
+                                            alt="">
+                                    </a>
+                                </li>
+                            </ul>
+                        </form>
+                    </div>
+                </div>
+            </div>    
+    </section>
+    {% endif %}
+</body>
+</html>
+
+{% endblock content %}

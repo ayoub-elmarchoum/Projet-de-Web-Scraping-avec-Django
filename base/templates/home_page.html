@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+{% extends 'base.html' %} {% load static %} {% block content %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/987f292b91.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+    <title>Scrapspot</title>
+  </head>
+  <body>
+    <div class="allinfos">
+      {% if user.is_authenticated %} {% else %}
+      <div class="log_btns">
+        <button class="btn1" type="button">
+          <i class="fa-solid fa-right-to-bracket fa-bounce"></i>
+          <span><a href="{% url 'login' %}">Log in</a></span>
+        </button>
+        <button class="btn2" type="button">
+          <i class="fa-solid fa-right-to-bracket fa-bounce"></i>
+          <span><a href="{% url 'register' %}">Sign up</a></span>
+        </button>
+      </div>
+      <section class="">
+        <div class="container">
+          <img
+            class="logo"
+            src="{% static 'assets/logo-no-background.png' %}"
+            width="400px"
+            alt=""
+          />
+          <div class="subcontainer">
+            <div class="infos">
+              <div class="">
+                <h1 class="">
+                  Web-scraping -> Turn websites into structured data
+                </h1>
+              </div>
+              <div id="" class="infos_tips about_btn">
+                <div>
+                  <p>
+                    Web scraping is the process of extracting data from websites
+                    using code. It's a powerful tool that can be used for a wide
+                    range of applications.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {% endif %}
+    </div>
+    {% if user.is_authenticated %}
+    <section class="features features_link">
+      <h1 class="heading_title" style="color: #00103a">Our Features</h1>
+      <div class="container_box">
+        <div>
+          <img src="{% static 'assets/icons_features/www.png' %}" alt="" />
+          <h3>URL input</h3>
+          <p>Allow users to input a URL they want to scrape data from</p>
+        </div>
+        <div>
+          <img
+            src="{% static 'assets/icons_features/filtering.png' %}"
+            alt=""
+          />
+          <h3>Data extraction</h3>
+          <p>
+            Provide a way to extract data from the website, such as selecting
+            elements with CSS Selectors ...
+          </p>
+        </div>
+        <div>
+          <img
+            src="{% static 'assets/icons_features/data-cleaning.png' %}"
+            alt=""
+          />
+          <h3>Data cleaning</h3>
+          <p>
+            Offer tools to clean up the extracted data ,such as removing
+            unwanted characters or formatting the data into a specific strusture
+            ...
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- services section starts -->
+    <section class="services">
+      <h1 class="heading-title" style="color: #00103a">our services</h1>
+      <div class="container_box">
+        <div>
+          <img
+            src="{% static 'assets/icons_services/research (2).png' %}"
+            alt=""
+          />
+          <h3>Market research</h3>
+        </div>
+        <div>
+          <img
+            src="{% static 'assets/icons_services/attraction.png' %}"
+            alt=""
+          />
+          <h3>Lead generation</h3>
+        </div>
+        <div>
+          <img src="{% static 'assets/icons_services/creative.png' %}" alt="" />
+          <h3>Content creation</h3>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
+
+{% endblock content %}
